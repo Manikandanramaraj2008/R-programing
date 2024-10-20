@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="K R Manikandan">
+
+<title>Tata_forage_Datavisualization_project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="intro of the project_files/libs/clipboard/clipboard.min.js"></script>
+<script src="intro of the project_files/libs/quarto-html/quarto.js"></script>
+<script src="intro of the project_files/libs/quarto-html/popper.min.js"></script>
+<script src="intro of the project_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="intro of the project_files/libs/quarto-html/anchor.min.js"></script>
+<link href="intro of the project_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="intro of the project_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="intro of the project_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="intro of the project_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="intro of the project_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tata_forage_Datavisualization_project</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>K R Manikandan </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4205049396.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="80"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-316910507.png" class="quarto-figure quarto-figure-center figure-img" width="74" height="67"></p>
+</figure>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">INTRODUCTION</h2>
+<p>This is a virtual internship Programme case study with the company TATA. This program is hosted through the site called “Forage”. This internship helps to learn data basics such as data cleaning, modelling, visualization and storytelling.</p>
+<p><strong>PROJECT SCENARIO</strong></p>
+<p>An online retail store has hired a consultant to review their &nbsp;data and provide insights that would be valuable to the CEO and CMO of the business. The management wants to analyse what the major contributing factors are to the revenue so they can strategically plan for next year. Suggest metrics that would enable them to make the decision on expansion.</p>
+<p><strong>Dataset Summary</strong></p>
+<p>InvoiceNo &nbsp;&nbsp;column has invoice number of each purchase made by customers</p>
+<p>StockCode has the products stock code.</p>
+<p>Description has the products description and information.</p>
+<p>InvoiceDate has dates from when the purchase happened.</p>
+<p>UnitPrice has the price of the product.</p>
+<p>CustomerID tells us who purchased the product in numerical</p>
+<p>Country is where the customer resides in.</p>
+<p><strong>DATA PREPARATION &amp; DATA PREPROCESSING</strong></p>
+<p>ü&nbsp; Excel to clean the dataset with the following steps:</p>
+<p>ü&nbsp; Removed Rows in the Quantity column showing negative numbers or below 1</p>
+<p>ü&nbsp; Removed Rows in the UnitPrice column that are below $0</p>
+<p>ü&nbsp; Removed Rows with blanks</p>
+<p>***<strong>Added Revenue Column from multiplying UnitPrice with Quantity</strong></p>
+<p><img src="images/clipboard-328760531.png" class="img-fluid" width="300"></p>
+</section>
+<section id="task-1" class="level1">
+<h1><strong>TASK 1</strong></h1>
+<section id="concerns-the-cmo-may-have" class="level3">
+<h3 class="anchored" data-anchor-id="concerns-the-cmo-may-have">Concerns the CMO may have</h3>
+<p><strong>1.&nbsp;&nbsp;&nbsp; How does the highest purchased product , perform in each region ?</strong></p>
+<p>Percentage of most sold product regionwise identification helpful to CMO strategy and target the more demanded products inventory and changing the &nbsp;marketing strategy of the less purchased products regionswise. &nbsp;The trends will indicate the purchasing habits of the customers in the particular region.</p>
+<p><strong>2.&nbsp;&nbsp;&nbsp;&nbsp; Which product purchased repeatedly ? what is the frequency between next purchase ?</strong></p>
+<p>Identification of repeated purchase of product by the customers. How long it takes for reordering the same product.&nbsp; Helpful to CMO&nbsp; plan the marketing strategy, make sure the availability of the products at particular seasons.</p>
+<p><strong>3.&nbsp;&nbsp;&nbsp; Which region the most repeated purchase happened ?</strong></p>
+<p>This is very important to find out the patterns , which region the purchasing happened repeatedly. Then the CMO can improve the customer relationship and award progrommes and referel programmes to encourage to customers in particular regions. Also improve the strategy of &nbsp;offers to the other region customers that way increase &nbsp;the sales in other regions</p>
+<p><strong>4.&nbsp;&nbsp;&nbsp; Which product has purchased more,how many times they purchased ?</strong></p>
+<p>This is very important to CMO to analyse the trends of product which purchased repeatedly. It helps to ensure the product availability at needed time. Understanding the demand of the product helpful the define the future strategy planning of the production and sales.</p>
+</section>
+<section id="concerns-the-ceo-may-have" class="level3">
+<h3 class="anchored" data-anchor-id="concerns-the-ceo-may-have">Concerns the CEO may have</h3>
+<p><strong>1.&nbsp;&nbsp;&nbsp; Which region is producing the most profit, and which region is producing the lowest?</strong></p>
+<p>The CEO is interested in the viewing revenue by the regions, to assess which regions are generating the highest revenue and which regions are generating lower revenue.</p>
+<p>As it is based on the fundamental source of income for the business. &nbsp;</p>
+<p>o&nbsp;&nbsp; <strong>Revenue</strong> <strong>analysis</strong> is focused on earnings and how to increase it. Using the data andanalysis.</p>
+<p>o&nbsp;&nbsp; The CEO will be able to ,decide on how to further generate revenue in the regions that are already generating the most revenue. For the regions that are not generating enough revenue.</p>
+<p>o&nbsp;&nbsp; The CEO will then study the reasons why there is a lack of sales in those regions and try to improve the products and make them more suitable for those regions.</p>
+<p><strong>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Did customers &nbsp;based have significant impact on revenue &nbsp; ?</strong></p>
+<p>Overall, revenue customers have a significant impact on a company’s revenue growth. Understanding their characteristics, behavior, and preferences is crucial for developing effective strategies and optimizing revenue.</p>
+<p><strong>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; What is the quarterly and monthly sales &nbsp;and revenue breakdown ?</strong></p>
+<p>This metric is one of the key indicators used by management, investors, and external analysts to gauge a company’s performance and its effectiveness in generating revenue from operations.</p>
+<p><strong>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; which month has the highest revenue and lowest revenue ?</strong></p>
+<p>A monthly trend of revenue will provide the CEO with insights on how the revenue is fluctuating each month.</p>
+<p><strong>This will enable the CEO to analyze ,</strong></p>
+<p>v How the internal changes inside the company have had impact on the sales.</p>
+<p>v How a new product launch has led to an increase in revenue during the month</p>
+<p>v How the introduction of a new region has led to an increase in revenue for the online store.</p>
+<p>v If there have been any delays internally that would have caused a potential decrease.</p>
+<p>Such analysis are vital for the senior management as it would enable them to plan and try to make the customer experience as smooth as possible.</p>
+</section>
+<section id="task_-2" class="level2">
+<h2 class="anchored" data-anchor-id="task_-2"><strong>TASK_ 2</strong></h2>
+<p><strong>Agenda of task_2</strong></p>
+<p>CEO and CMO to provide visuals on the metrics that they wish to analyse for the online retail store. gather the requirements and provide them with the type of visual that would be best suited to the scenario. The senior management wants to understand how their business is performing and what areas are the key strengths of the company. They are also focused on identifying opportunities that would lead to growth and generate more revenue in the future.</p>
+<p><strong>Requirements</strong></p>
+<p>Multiple visualisation requests from the CEO , &nbsp;need to provide the visual which would explain the data and insights in the simplest possible manner. The visual should adequately convey the information that trying to present.</p>
+<p><strong>Questions 1/ 5</strong></p>
+<p>The CEO of the retail store is interested to view the time series of the revenue data for the entire year. The CEO is interested in viewing the seasonal trends and wants to dig deeper into why these trends occur. This analysis will be helpful for the CEO to forecast for the next year.</p>
+<p><strong>1 &nbsp;Which visual would most likely help the CEO analyse the data?</strong></p>
+<p><strong>A line chart</strong></p>
+<p>is used to represent repeated measurements taken over regular time intervals. Time is always displayed on the horizontal axis and values on the vertical axis. The line chart would enable the CEO to see important changes in the data, like seasonality or cyclic behaviour, which will provide a better understanding of the revenue and help forecast better.</p>
+<p><strong>Questions 2/ 5</strong></p>
+<p>The CMO is interested in viewing the top 10 countries which are generating the highest revenue. Additionally, as a subcomponent, they would also like to see which products are contributing to the total revenue being generated by each country. Which visual would enable the</p>
+<p><strong>2&nbsp; CMO to view the revenue for each country and the breakdown by products on a single chart?</strong></p>
+<p>&nbsp;<strong>stacked bar chart</strong></p>
+<p>The chart allows users to compare subcomponent pieces across different categories. The height or length of the bars will represent the total revenue generated by each country. Each bar will be divided into the products sold, where the major portion will be allocated to the products that are generating more revenue. This will allow the CMO to view the total revenue data as well as the revenue for each individual product.</p>
+<p><strong>Questions 3/ 5</strong></p>
+<p>The CEO of the online retail store wants to see how much average revenue is generated by each country. They are interested in viewing the following metrics on the visual: Minimum value First quartile value Median value Third quartile value Maximum value</p>
+<p><strong>3 Which chart would you create to show the above metrics for the average revenue generated by each country?</strong></p>
+<p><strong>Box plot</strong></p>
+<p>The CEO’s request would best be fulfilled using a box plot. The box plot would show the distribution of data based on a five number summary (“minimum”, first quartile, median, third quartile, and “maximum”). Boxplots are used to graphically demonstrate the locality, spread and skewness groups of numerical data. By using the boxplot, we can easily spot outliers and the distribution of the plot.</p>
+<p><strong>Questions &nbsp;4/5</strong></p>
+<p>The CMO of the online retail store wants to view the information on the top 10 customers by revenue. They are interested in a visual that shows the greatest revenue-generating customer at the start and gradually declines to the lower revenue-generating customers. The CMO wants to target the higher revenue-generating customers and ensure that they remain satisfied with their products.</p>
+<p><strong>4 Which visual would help the CMO understand the data on revenue generated by the top 10 customers?</strong></p>
+<p><strong>COLUMN CHART</strong></p>
+<p>Column charts are used to display comparisons between different items. Alternatively, you can view a comparison of items over time. In this case, the column chart would display the top 10 customers who are contributing the most to revenue. The first bar on the left would be the longest one and would display information for the customer who bought the most goods from the online store. The revenue contributed by each customer would gradually decline as the bars move to the right.</p>
+<p><strong>Questions &nbsp;5/5</strong></p>
+<p>The CEO is looking to gain insights on the demand for their products. They want to look at all countries and see which regions have the greatest demand for their products. Once the CEO gets an idea of the regions that have high demand, they will initiate an expansion strategy which will allow the company to target these areas and generate more business from these regions. He wants to view the entire data on a single view without the need to scroll or hover over the data points to identify the demand.</p>
+<p><strong>Which chart would be most useful to provide the CEO information on the demand in each region?</strong></p>
+<p><strong>MAP CHART</strong></p>
+<p>A map chart would be the best option for visuals here as it will allow the CEO to view the demand information on a single view. The map chart will have all the countries on a single map and the demand will be displayed by highlighting the area of each country. Dark highlights would mean that the countries have high demand for products whereas the countries that are highlighted light colour are the ones that have low demand. Geographical data is best visualised using map charts as they are very easy to view and the underlying values are also easy to analyse.</p>
+</section>
+<section id="task-3" class="level2">
+<h2 class="anchored" data-anchor-id="task-3">TASK 3</h2>
+<p>Create the visuals around four of the questions that the CEO and CMO have requested. can use either Tableau or Power BI to create the visuals .</p>
+<p>Data cleanup&nbsp;</p>
+<p>data contains some returns to the store which are provided in negative quantities and there are unit prices which were input in error</p>
+<ul>
+<li><p>Create a check that the quantity should not be below 1 unit</p></li>
+<li><p>Create a check that the Unit price should not be below $0</p>
+<p>use conditional formulas where the logic would state that if the conditions are met then the tool should exclude the data from analysis. Also use data transformation methods to get rid of the bad data.</p></li>
+</ul>
+<p><br>
+<u><strong>Question 1</strong></u><br>
+The CEO of the retail store is interested to view the time series of the revenue data for the year 2011 only. He would like to view granular data by looking into revenue for each month. The CEO is interested in viewing the seasonal trends and wants to dig deeper into why these trends occur. This analysis will be helpful for the CEO to forecast for the next year.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="TASK%203%20TIME%20SERIES%20ANALYSIS"><img src="TATA%20tableau%20visualisation/Presentation%20of%20internship%20visual%20project%2011th%20sep%202024%20v1/Slide3.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="REVENUE PER MONTH FOR THE YEAR 2011" width="1280"></a></p>
+</figure>
+</div>
+<figcaption>TASK 3 TIME SERIES ANALYSIS</figcaption>
+</figure>
+</div>
+<p><u><strong>Question 2</strong></u><br>
+The CMO is interested in viewing the top 10 countries which are generating the highest revenue. Additionally, the CMO is also interested in viewing the quantity sold along with the revenue generated. The CMO does not want to have the United Kingdom in this visual.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="TASK%202%20REVENUE%20Vs%20QUANTITY%20ANALYSIS"><img src="TATA%20tableau%20visualisation/Presentation%20of%20internship%20visual%20project%2011th%20sep%202024%20v1/Slide4.JPG" class="img-fluid figure-img" alt="REVENUE Vs QUANTITY ANALYSIS top 10 countries"></a></p>
+<figcaption>TASK 2 REVENUE Vs QUANTITY ANALYSIS</figcaption>
+</figure>
+</div>
+<p><u><strong>Question 3</strong></u><br>
+The CMO of the online retail store wants to view the information on the top 10 customers by revenue. He is interested in a visual that shows the greatest revenue generating customer at the start and gradually declines to the lower revenue generating customers. The CMO wants to target the higher revenue generating customers and ensure that they remain satisfied with their products.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="TASK%203%20CUSTOMER%20ANALYSIS"><img src="TATA%20tableau%20visualisation/Presentation%20of%20internship%20visual%20project%2011th%20sep%202024%20v1/Slide5.JPG" class="img-fluid figure-img" alt="TOP 10 CUSTOMERS HIGHEST REVENUE"></a></p>
+<figcaption>TASK 3 CUSTOMER ANALYSIS</figcaption>
+</figure>
+</div>
+<p><u><strong>Question 4</strong></u><br>
+The CEO is looking to gain insights on the demand for their products. He wants to look at all countries and see which regions have the greatest demand for their products. Once the CEO gets an idea of the regions that have high demand, he will initiate an expansion strategy which will allow the company to target these areas and generate more business from these regions. He wants to view the entire data on a single view without the need to scroll or hover over the data points to identify the demand. There is no need to show data for the United Kingdom as the CEO is more interested in viewing the countries that have expansion opportunities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="TASK4%20PRODUCT%20Vs%20REGION%20REVENUE%20ANALYSIS"><img src="TATA%20tableau%20visualisation/Presentation%20of%20internship%20visual%20project%2011th%20sep%202024%20v1/Slide6.JPG" class="img-fluid figure-img" alt="PRODUCT Vs REGION REVENUE ANALYSIS"></a></p>
+<figcaption>TASK4 PRODUCT Vs REGION REVENUE ANALYSIS</figcaption>
+</figure>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

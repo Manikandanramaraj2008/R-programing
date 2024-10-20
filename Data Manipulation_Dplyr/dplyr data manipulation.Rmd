@@ -1,0 +1,111 @@
+**install packages Dplyr**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+
+```
+
+```{r}
+y3=letters[-1:-21]
+y3
+```
+
+**create sample data**
+
+data frame function used to create data
+
+```{r}
+my_data<-data.frame(y1=c(1:5),y2=letters[-1:-21],y3=5:1)
+my_data
+
+```
+
+**Creating the new variable**
+
+^variable name jothi_y1 created , the vakues from addition of variables y1 and y3 the mutate function used.^
+
+```{r}
+new_data <- my_data %>%  mutate(jothi_y1=y1+y3)
+new_data   # print sample data
+
+```
+
+**Rename the variable / column name**
+
+variable name y1 rename as sabai_y1 using renaming function
+
+```{r}
+new_data %>% rename(sabai_y1=y1)
+```
+
+**Selecting the specific variables by our choice\_ select function used,**
+
+selecting the variable names y1,jothi\_\_1 and y2
+
+```{r}
+new_data %>% select(y1,jothi_y1,y2)
+```
+
+**Arrange** function used to rearrange the values of the variables
+
+variable y1 values are manipulate in to descending orders
+
+```{r}
+new_data %>% arrange(desc(y1)) # descending order
+
+```
+
+variable y1 values are manipulate in to descending orders
+
+```{r}
+new_data %>% arrange(y1)  # ascending order
+```
+
+**Order function** Alternate method for sorting ascending to the variable values
+
+```{r}
+new_data[order(new_data$y2),]  
+
+```
+
+**Order function** Alternate method for sorting descending to the variable values
+
+```{r}
+new_data[rev(order(new_data$y2)),]
+
+```
+
+**SLICE** \_ selecting the rows , slice function used to show requested number of rows.
+
+i am calling here only 2 rows here.
+
+```{r}
+new_data %>% slice(1:2)
+```
+
+filtering the rows or values of the variables by conditions
+
+filtering the value of y1 greater then 3, and y3 is less then 2
+
+```{r}
+new_data %>% filter(y1>3 & y3<2)
+
+
+```
+
+**summarize** the data by grouping
+
+grouping the jothi_y1 variable and summarise it for mean, new variable mean_y1 created.
+
+```{r}
+new_data %>% group_by(jothi_y1) %>% summarise(mean_y1=mean(y1))
+```
+
+**counting** the rows by group
+
+the number of times v ,w, .... occured shown in "n" column
+
+```{r}
+new_data %>% count(y2)
+```
