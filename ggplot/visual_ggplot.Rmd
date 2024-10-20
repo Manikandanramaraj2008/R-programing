@@ -1,0 +1,238 @@
+---
+title: "ggplot"
+author: "KRM"
+date: "`r Sys.Date()`"
+output: word_document
+output_format: docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+
+library(tidyverse)
+```
+
+```{r}
+data("fruit")
+summary(fruit)
+dim(fruit)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+data("diamonds")
+View(diamonds)
+```
+
+```{r,warnings=FALSE}
+library(ggsci)  # scientific themes of journals, color pallets for ggplot2 
+library(ggpubr) # color pallets for ready to publish
+library(ggExtra) # adding marginal histogram to ggplot2
+library(aplot)
+library(ggbeeswarm)  
+
+```
+
+```{r}
+ggplot()+geom_point(data=diamonds,mapping=aes(x=carat,y=cut,color=price),alpha=0.5,size=3)
+
+```
+
+```{r}
+data(iris)
+View(iris)
+colnames(iris)
+
+
+```
+
+```{r}
+gpi <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()
+
+gpi
+```
+
+```{r}
+# legend position == bottom / top / c(x,y) placement of legend the sidebar
+
+gpi1 <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()+ theme_classic()+theme(legend.position = c(0.7,0.25))
+
+gpi1
+
+```
+
+```{r}
+gpi <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()+ theme_classic()+theme(legend.position = "top")
+
+ggMarginal(gpi,groupFill = TRUE)
+
+
+```
+
+```{r}
+gpi <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()+ theme_classic()+theme(legend.position = c(0.7,0.25))
+
+ggMarginal(gpi,groupFill = TRUE, type="boxplot")
+
+```
+
+```{r}
+gpi <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()+ theme_classic()+theme(legend.position = c(0.7,0.25))
+
+ggMarginal(gpi,groupFill = TRUE, type="boxplot", margin="y")
+
+
+```
+
+```{r}
+
+gpi <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()+ theme_classic()+theme(legend.position = c(0.7,0.25))
+
+ggMarginal(gpi,groupFill = TRUE, type="boxplot", margin="x")
+
+
+# we can change the type == histogram, column chart,  density plot
+
+```
+
+```{r}
+# geom smooth adding the separator line
+```
+
+```{r}
+gpi <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+
+geom_point()+ theme_classic()+theme(legend.position = "top")+geom_smooth()
+
+ggMarginal(gpi,groupFill = TRUE)
+```
+
+```{r}
+gpia<-ggplot(iris,aes(Sepal.Width,fill=Species))+geom_density()+
+  theme_void()+theme(legend.position="none")
+
+gpia
+
+```
+
+```{r}
+##  alpha value added in density the color theme change
+gpia<-ggplot(iris,aes(Sepal.Width,fill=Species))+geom_density(alpha=0.3)+
+  theme_void()+theme(legend.position="none")
+
+gpia
+```
+
+```{r}
+
+gpiab1<-ggplot(iris,aes(1,Sepal.Width,fill=Species))+geom_boxplot(alpha=0.3)+
+  theme_void()+theme(legend.position="none")
+
+gpiab1
+```
+
+```{r}
+
+ap<-gpi1 %>% insert_top(gpia,height = 0.3) %>% insert_right(gpia,width = 0.3)
+
+ap
+```
+
+```{r}
+
+counts<-table(iris$Species)
+counts
+
+barplot(counts)
+
+
+
+```
+
+```{r}
+pie(counts)
+```
+
+```{r}
+plot(iris$Sepal.Length,iris$Petal.Width)
+
+```
+
+```{r}
+gpbp <- ggplot(iris,aes(Sepal.Length,Sepal.Width,color=Species))+geom_boxplot()
+gpbp
+
+
+```
+
+```{r}
+gpbp_2 <- ggplot(iris,aes(Species,
+                          Sepal.Width,fill=Species))+geom_boxplot()+xlab("Species")
+gpbp_2
+```
+
+```{r}
+gpbp_3 <- ggplot(iris,aes(reorder(Sepal.Width,Sepal.Length),
+                          Sepal.Length,fill=Sepal.Width))+geom_boxplot()+xlab("Sepal.Width in cm")
+gpbp_3
+
+```
+
+```{r}
+iris %>% ggplot(aes(Petal.Length,Petal.Width,fill=Species))+geom_point()+
+  xlab("petal length in cm")+ylab("petal width in cmm")
+```
+
+```{r}
+getwd()
+```
+
+```{r}
+library(DataExplorer) ## prepare report of pdf for data 
+create_report(iris)
+```
+
+Grammer of Graphics
+
+Layers1 -Data input provided
+
+layers2 - Aesthetics variable available
+
+layer 3 - Geometry applied
+
+layer4 - facets
+
+layer 5 - coordinates
+
+```{r}
+
+```

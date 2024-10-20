@@ -1,0 +1,74 @@
+---
+title: "R building block_swirl"
+author: "KRM"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r,warning=FALSE}
+
+getwd()
+library(swirl)
+
+```
+```{r}
+
+swirl()
+
+```
+```{r}
+getwd()
+
+```
+```{r}
+ls()
+
+```
+```{r}
+info()
+```
+```{r}
+x<-9
+```
+```{r}
+ls()
+```
+```{r}
+dir()
+```
+```{r}
+?list.files
+```
+
+
+```{r}
+
+info(list.files)
+```
+```{r}
+args(list.files)
+```
+```{r}
+nxt()
+
+```
+```{r}
+old.dir<-  getwd()
+ 
+```
+```{r}
+
+```
+```{r}
+dir.create("testdir")
+```
+```{r}
+
+
+```
+
