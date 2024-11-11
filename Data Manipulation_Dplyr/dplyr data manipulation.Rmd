@@ -3,11 +3,47 @@ output:
   word_document: default
   html_document: default
 ---
-**install packages Dplyr**
+
+# **Install packages Tidyverse  &  Dplyr**
+
+## **Tidyverse** 
+
+Helped to create Tidy data easy to visualize and model.
+
+below are the functions used to manipulate the data.
+
+##### gather()\_ Make wide data longer
+
+##### Spread()\_ it makes long data wider
+
+##### Separate()\_ splits single column in to multiple columns
+
+##### Unite()\_it combines multiple columns in to single columns.
+
+**Dplyr**
+
+Used to transform and summarize the tabular data with columns and rows.
+
+##### select()\_ it selects column variables based on their names.
+
+##### filter()\_ it filter the rows based on their values .
+
+##### arrange()\_ it changes the ordering of the rows.
+
+##### summary()\_ it reduces multiple values down to a single summary.
+
+##### mutate()\_ it creates the column that are functions of existing variables.
 
 ```{r}
 library(tidyverse)
 library(dplyr)
+
+```
+
+```{r}
+ today()
+ class(today())
+ 
 
 ```
 
